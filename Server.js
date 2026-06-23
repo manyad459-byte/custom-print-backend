@@ -286,7 +286,7 @@ app.put("/orders/:id/status", async (req, res) => {
 });
 
 // ===================== DESIGN =====================
-const Design = require("./models/Design");
+const Design = require("./models/design");
 
 app.post("/api/designs", async (req, res) => {
   const design = new Design(req.body);
