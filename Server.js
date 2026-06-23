@@ -298,6 +298,9 @@ app.get("/api/designs", async (req, res) => {
   const data = await Design.find().sort({ createdAt: -1 });
   res.json(data);
 });
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully 🚀");
+});
 // ===================== SERVER =====================
 const PORT = process.env.PORT || 5000;
 
