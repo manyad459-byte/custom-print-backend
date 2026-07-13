@@ -172,9 +172,13 @@ app.post("/login", async (req, res) => {
     return res.status(400).json({ message: "Invalid credentials" });
   }
 
-  res.json({ user: { email: user.email, role: user.role } });
+  res.json({
+    user: {
+      email: user.email,
+      role: user.role ? user.role.toLowerCase() : "user"
+    }
+  });
 });
-
 app.post("/register", async (req, res) => {
   const exists = await User.findOne({ email: req.body.email });
 
